@@ -7,10 +7,11 @@ namespace CalculatorApp.Models
 {
     public class Calculate
     {
-        public int num1 { get; set; }
+        public int Num1 { get; set; }
         public int num2 { get; set; }
-        public int result { get; set; }
-        public int answer { get; set; }
+        public int Answer { get; set; }
+
+        public string Operator { get; set; }
 
 
 

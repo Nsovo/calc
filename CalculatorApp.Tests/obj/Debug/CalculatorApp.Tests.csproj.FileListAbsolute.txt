@@ -1,0 +1,1 @@
+C:\Users\F4970780\Documents\Visual Studio 2017\Projects\CalculatorApp\CalculatorApp.Tests\obj\Debug\CalculatorApp.Tests.csprojResolveAssemblyReference.cache

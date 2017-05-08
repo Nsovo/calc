@@ -17,19 +17,22 @@
     <div class="panel panel-default">
         <div class="panel-body">
             <div>
-                @Html.Label("Enter first number") : @Html.TextBoxFor(model => model.num1)
+                @Html.Label("Enter first number") : @Html.TextBoxFor(model => model.Num1)
                 @Html.Label("Enter second number") : @Html.TextBoxFor(model => model.num2)
-                = @Html.LabelFor(model => model.answer)
+                = @if (Model != null && Model.Answer != 0)
+                {
+                    @Model.Answer;
+                }
             </div>
             <div>
                 <h2>
-                    @Html.RadioButton("key", "0") +
+                    @Html.RadioButtonFor(model => model.Operator, "Add") +
                     <br>
-                    @Html.RadioButton("key", "1") -
+                    @Html.RadioButtonFor(model => model.Operator, "Subtract") -
                     <br>
-                    @Html.RadioButton("key", "2") *
+                    @Html.RadioButtonFor(model => model.Operator, "Multiply") *
                     <br>
-                    @Html.RadioButton("key", "3") /
+                    @Html.RadioButtonFor(model => model.Operator, "Divide") /
                 </h2>
             </div>
             <input type="submit" name="Index" value="Index"  />

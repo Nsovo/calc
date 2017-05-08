@@ -28,16 +28,16 @@ namespace CalculatorApp.Controllers
         public ActionResult Index(Calculate calc)
         {
            
-            if (calc.result ==0)
-               calc.answer = repository.Add(calc.num1, calc.num2);
-            else if(calc.result == 1)
-                calc.answer = repository.Subtract(calc.num1, calc.num2);
-            else if (calc.result == 2 )
-                calc.answer = repository.Multiply(calc.num1, calc.num2);
-            else if (calc.result == 3)
-                calc.answer = repository.Divide(calc.num1, calc.num2);
+            if (calc.Operator == "Add")
+               calc.Answer = repository.Add(calc.Num1, calc.num2);
+            else if(calc.Operator == "Subtract")
+                calc.Answer = repository.Subtract(calc.Num1, calc.num2);
+            else if (calc.Operator == "Multiply")
+                calc.Answer = repository.Multiply(calc.Num1, calc.num2);
+            else if (calc.Operator == "Divide")
+                calc.Answer = repository.Divide(calc.Num1, calc.num2);
 
-            return View("Index", calc);
+            return View(calc);
         }
 
     
