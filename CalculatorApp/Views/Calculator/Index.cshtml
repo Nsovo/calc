@@ -1,0 +1,39 @@
+﻿@{
+    ViewBag.Title = "Calc Page";
+}
+<br/>
+<br />
+
+
+
+@model CalculatorApp.Models.Calculate
+@{
+    ViewBag.Title = "Index";
+}
+
+@using (Html.BeginForm("Index", "Calculator"))
+{
+
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div>
+                @Html.Label("Enter first number") : @Html.TextBoxFor(model => model.num1)
+                @Html.Label("Enter second number") : @Html.TextBoxFor(model => model.num2)
+                = @Html.LabelFor(model => model.answer)
+            </div>
+            <div>
+                <h2>
+                    @Html.RadioButton("key", "0") +
+                    <br>
+                    @Html.RadioButton("key", "1") -
+                    <br>
+                    @Html.RadioButton("key", "2") *
+                    <br>
+                    @Html.RadioButton("key", "3") /
+                </h2>
+            </div>
+            <input type="submit" name="Index" value="Index"  />
+        </div>
+    </div>
+}
+
