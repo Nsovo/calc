@@ -17,20 +17,20 @@ namespace CalculatorApp.Controllers
         public CalculatorController()
         {
         }
-       
+
         public ActionResult Index()
         {
-           
+
             return View();
         }
 
         [HttpPost]
         public ActionResult Index(Calculate calc)
         {
-           
+
             if (calc.Operator == "Add")
-               calc.Answer = repository.Add(calc.Num1, calc.num2);
-            else if(calc.Operator == "Subtract")
+                calc.Answer = repository.Add(calc.Num1, calc.num2);
+            else if (calc.Operator == "Subtract")
                 calc.Answer = repository.Subtract(calc.Num1, calc.num2);
             else if (calc.Operator == "Multiply")
                 calc.Answer = repository.Multiply(calc.Num1, calc.num2);
@@ -40,6 +40,13 @@ namespace CalculatorApp.Controllers
             return View(calc);
         }
 
-    
+
+        [HttpPost]
+        public ActionResult Clear() {
+            Calculate calc = new Calculate();
+            return View(calc);
+        }
+
+
     }
 }
