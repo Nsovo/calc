@@ -16,32 +16,36 @@
 
     <div class="panel panel-default">
         <div class="panel-body">
+            <div class="row col-lg-12">
+                @if (Model != null)
+                {
+                    <div class="success">@Html.Label("Answer") : @Model.Answer</div>
+                }
+            </div>
+
             <div class="row">
+               
                 <div class="col-lg-2">@Html.Label("Enter first number") : </div>
                 <div class="col-lg-2 ">@Html.TextBoxFor(model => model.Num1, new { @class = "form-control input-sm" })</div>
                 <div class="col-lg-2">@Html.Label("Enter second number") : </div>
-                <div class="col-lg-2">@Html.TextBoxFor(model => model.num2, new { @class = "form-control input-sm" })</div>
-                <div class="col-lg-1">
-                    =@if (Model != null && Model.Answer != null)
-                    {
-                        @Model.Answer;
-                    }
-                </div>
+                <div class="col-lg-2">@Html.TextBoxFor(model => model.Num2, new { @class = "form-control input-sm" })</div>
+               
             </div>
                 <div class="row col-lg-12">
+
                     <h2>
-                        @Html.RadioButtonFor(model => model.Operator, "Add") +
+                        @Html.RadioButtonFor(model => model.OperatorSelected, "Add") +
                         <br>
-                        @Html.RadioButtonFor(model => model.Operator, "Subtract") -
+                        @Html.RadioButtonFor(model => model.OperatorSelected, "Subtract") -
                         <br>
-                        @Html.RadioButtonFor(model => model.Operator, "Multiply") *
+                        @Html.RadioButtonFor(model => model.OperatorSelected, "Multiply") *
                         <br>
-                        @Html.RadioButtonFor(model => model.Operator, "Divide") /
+                        @Html.RadioButtonFor(model => model.OperatorSelected, "Divide") /
                     </h2>
                 </div>
             </div>
                 <div class="col-lg-12">
-                    <input type="submit" name="Index" value="Calculate" />
+                    <input type="submit" name="Index" value="=" />
                     <input type="submit" name="Index" value="Clear" onclick="location.href='@Url.Action("Clear", "Calculator")'" />
                 </div>
 

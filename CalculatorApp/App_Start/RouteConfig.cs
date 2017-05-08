@@ -16,7 +16,7 @@ namespace CalculatorApp
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Calulator", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Calculator", action = "Index", id = UrlParameter.Optional }
             );
         }
     }
